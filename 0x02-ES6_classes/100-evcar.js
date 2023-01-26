@@ -2,8 +2,8 @@ import Car from './10-car';
 
 export default class EVCar extends Car {
   constructor(_brand, _motor, _color, _range) {
-    super(_brand, _motor, _color);
-    this._range = _range;
+    super(brand, motor, color);
+    this._range = range;
   }
 
   get range() {
