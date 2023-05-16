@@ -2,19 +2,20 @@ const express = require('express');
 const fs = require('fs');
 
 const app = express();
+const PORT = 1245;
 const DB_FILE = process.argv.length > 2 ? process.argv[2] : '';
 
 /**
  * Counts the students in a CSV data file.
- * @param {String} dataPath The path to the CSV data file.
+ * @param {String} dataFilePath The path to the CSV data file.
  * @author Manny Negussie <https://github.com/MannyNe2>
  */
-const countStudents = (dataPath) => new Promise((resolve, reject) => {
-  if (!dataPath) {
+const countStudents = (dataFilePath) => new Promise((resolve, reject) => {
+  if (!dataFilePath) {
     reject(new Error('Cannot load the database'));
   }
-  if (dataPath) {
-    fs.readFile(dataPath, (err, data) => {
+  if (dataFilePath) {
+    fs.readFile(dataFilePath, (err, data) => {
       if (err) {
         reject(new Error('Cannot load the database'));
       }
@@ -88,8 +89,8 @@ app.get('/students', (req, res) => {
     });
 });
 
-app.listen(1245, () => {
-  console.log(`Server listening on port 1245`);
+app.listen(PORT, () => {
+  console.log(`Server listening on port ${PORT}`);
 });
 
 module.exports = app;
