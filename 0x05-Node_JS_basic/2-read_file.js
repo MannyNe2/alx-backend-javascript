@@ -5,8 +5,6 @@ const fs = require('fs');
  * @param {String} dataFilePath The path to the CSV data file.
  * @author Manny Negussie <https://github.com/MannyNe2>
  */
-const fs = require('fs');
-
 const countStudents = (dataFilePath) => {
   try {
     let data = fs.readFileSync(dataFilePath, 'utf8').toString().split('\n');
