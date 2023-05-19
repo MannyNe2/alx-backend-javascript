@@ -15,7 +15,7 @@ describe('API integration test for REST endpoints', () => {
   it('GET /cart/:id returns correct response for valid :id', (done) => {
     request.get(`${API_ENDPOINT}/cart/69`, (_err, res, body) => {
       expect(res.statusCode).to.be.equal(200);
-      expect(body).to.be.equal('Payment methods for cart 47');
+      expect(body).to.be.equal('Payment methods for cart 69');
       done();
     });
   });
